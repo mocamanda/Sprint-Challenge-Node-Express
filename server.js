@@ -12,7 +12,7 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 
-// const projectsRouter = require('./projects/projectsRouter.js');
+const projectsRouter = require('./projects/projectsRouter.js');
 // const actionsRouter = require('./actions/actionsRouter.js');
 
 // Server Code
@@ -22,7 +22,7 @@ server.use(helmet());
 server.use(cors());
 server.use(express.json());
 
-// server.use('/api/projects', projectsRouter);
+server.use('/api/projects', projectsRouter);
 // server.use('/api/actions', actionsRouter);
 
 const port = 5000;
