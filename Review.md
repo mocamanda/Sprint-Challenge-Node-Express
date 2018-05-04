@@ -1,8 +1,10 @@
 # Review Questions
 
 ## What is Node.js?
+    It is an environment that lets us run JavaScript outside of the browser.
 
 ## What is Express?
+
 
 ## Mention two parts of Express that you learned about this week.
 
