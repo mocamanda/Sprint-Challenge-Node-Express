@@ -43,4 +43,18 @@ router.post('/', (req, res) => {
         });
 });
 
+// PUT/Update Action
+router.put(':id', (req, res) => {
+    const { id } = req.params;
+    const update = req.body;
+    actionModel
+        .update(id, update)
+        .then(response => {
+            res.status(200).json(response);
+        })
+        .catch(error => {
+            res.status(500).json(`There was an error updating action: ${error}`);
+        });
+});
+
 module.exports = router;
