@@ -52,7 +52,7 @@ router.put('/:id', (req, res) => {
         .then(response => {
             res.status(200).json(response);
         })
-        .catch(error => {
+        .catch(err => {
             res.status(500).json(`There was an error updating action: ${error}`);
         });
 });

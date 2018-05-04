@@ -69,10 +69,13 @@ router.delete('/:id', (req, res) => {
                 .then(response => {
                     res.status(200).json(project);
                 })
-        })
                 .catch(err => {
                     res.status(500).json(`There was an error deleting project: ${error}`);
                 });
+            })
+            .catch(err => {
+                res.status(404).json(`Project not found: ${error}`);
+            });
 });
 
 module.exports = router;
