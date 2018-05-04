@@ -17,4 +17,19 @@ router.get('/', (req, res) => {
         });
 });
 
+// GET/Read specific Action
+router.get(':id', (req, res) => {
+    const { id } = req.params;
+
+    actionModel
+        .get(id)
+        .then(action => {
+            res.status(200).json(action);
+        })
+        .catch(err => {
+            res.status(500).json(`There was an error getting that action: ${error}`);
+        });
+});
+
+
 module.exports = router;
