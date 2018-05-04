@@ -1,10 +1,14 @@
 {
   "name": "Sprint-Challenge-Node-Express",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
   "repository": "https://github.com/mocamanda/Sprint-Challenge-Node-Express.git",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "helmet": "^3.12.0",
     "knex": "^0.14.6",
