@@ -52,9 +52,27 @@ router.put('/:id', (req, res) => {
         .then(response => {
             res.status(200).json(response);
         })
-        .catch(error => {
-            res.status(500).json(err);
+        .catch(err => {
+            res.status(500).json(`There was an error updating project: ${error}`);
         });
+});
+
+// DELETE/Delete Project
+router.delete('/:id', (req, res) => {
+    const { id } = req.params;
+    projectModel
+        .get(id)
+        .then(response => {
+            project = { ...response[0] };
+            projectModel
+                .remove(id)
+                .then(response => {
+                    res.status(200).json(project);
+                })
+        })
+                .catch(err => {
+                    res.status(500).json(`There was an error deleting project: ${error}`);
+                });
 });
 
 module.exports = router;
