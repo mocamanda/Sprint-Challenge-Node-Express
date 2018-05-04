@@ -31,5 +31,16 @@ router.get(':id', (req, res) => {
         });
 });
 
+// POST/Create Action
+router.post('/', (req, res) => {
+    actionModel
+        .insert(req.body)
+        .then(response => {
+            res.status(200).json(response);
+        })
+        .catch(err => {
+            res.status(500).json(`There was an error posting action: ${error}`);
+        });
+});
 
 module.exports = router;
